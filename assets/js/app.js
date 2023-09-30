@@ -8,18 +8,21 @@ setTimeout(() => {
 }, 1000);
 
 
+const backToTopButton = document.getElementById('back-to-top');
 
-var btn = $('#button');
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 500) {
-        btn.addClass('show');
+// Add a scroll event listener to toggle the button's visibility
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
     } else {
-        btn.removeClass('show');
+        backToTopButton.style.display = 'none';
     }
 });
 
-btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '500');
+// Add a click event listener to scroll to the top when the button is clicked
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

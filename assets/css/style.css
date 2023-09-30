@@ -543,6 +543,29 @@ nav {
     border: 3px solid #FF0879;
 }
 
+.hover-line_2 {
+    position: relative;
+    transition: all 300ms linear;
+}
+
+.hover-line_2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0;
+    height: 2.5px;
+    background-color: #007AFF;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.hover-line_2:hover::before {
+    width: 100%;
+    left: 0;
+}
+
 .hover-line {
     position: relative;
     transition: all 300ms linear;
@@ -586,43 +609,24 @@ html body {
     scroll-behavior: smooth !important;
 }
 
-#button {
-    display: inline-block;
-    background-color: #F9C06A;
-    width: 50px;
-    height: 45px;
-    text-align: center;
-    border-radius: 4px;
+#back-to-top {
+    display: none;
     position: fixed;
-    bottom: 5px;
-    right: 5px;
-    transition: background-color .3s,
-        opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 10;
-}
-
-#button::after {
-    content: "⇪";
-    font-size: 3rem;
-    line-height: 38px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1 !important;
+    background-color: #007bff;
     color: #fff;
+    border: none;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    font-size: 40px;
 }
 
-#button.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-@media (min-width: 500px) {
-    .content {
-        width: 43%;
-    }
-
-    #button {
-        margin: 30px;
-    }
+#back-to-top:hover {
+    background-color: #0056b3;
 }
 
 .image-1-grid:hover .black_bg_box {
@@ -647,4 +651,14 @@ html body {
 
 .cursor_pointer {
     cursor: pointer;
+}
+
+.pin_position {
+    right: 0;
+    top: 3%;
+}
+
+.pin_position_2 {
+    left: 0;
+    top: 3%;
 }
